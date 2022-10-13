@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*C866B2)*/
+body {
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  padding: 50px;
+}
+
+.btn {
+  text-decoration: none;
+  border: 2px solid #764abc;
+  color: #764abc;
+  padding: 10px 20px;
+  border-radius: 0px;
+  position: relative;
+  transition: all 1s;
+  
+  overflow:hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #764abc;
+  transition: all 0.5s;
+  z-index: -1;
+  opacity:0;
+  -webkit-transform: translate(-130%, 0%) skew(60deg);
+   transform: translate(-130%, 0%) skew(60deg);
+  
+ 
+}
+
+.btn:hover::before {
+  opacity:1;
+  -webkit-transform: skew(0deg);
+  transform: skew(0deg);
+}
+.btn:hover {
+  color: #fff;
+}
+
+
+
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+.example-animation {
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+/** Card css **/
+
+.report_card {
+    background: #000;
+    color: #fff;
+    position:relative;
+    width: 300px;
+    margin: 20px;
+    z-index: 0;
+    overflow: hidden;
+    
+}
+
+.report_card__content {
+    padding: 20px;
+}
+.report_card_btn {
+    background: #444;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 10;
+    
+    -webkit-transform: translate(-100%, 50%) skew(60deg);
+    transform: translate(-100%, 50%) skew(60deg);
+    color: #fff;
+    text-decoration: none;
+}
+.report_card:hover .report_card_btn {
+     
+  -webkit-transform: skew(0deg);
+  transform: skew(0deg);
+}
+
+.report_card_btn:after {
+    content: "";
+    display: block;
+    background: #fff;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    top:10px;
+    position: absolute;
+}
+.report_card:before {
+    content: "";
+    display: block;
+    background: #fff;
+    width: 0%;
+    height: 2px;
+    right: 0;
+    bottom:10px;
+    position: absolute;
+    z-index: 99;
+}
+.report_card:hover:before, .report_card:hover .report_card_btn:after{
+    width:30%;
+    transition: width 0.5s;
+}
+    </style>
+</head>
+<body>
+    <a href="#" class="btn">Hover Me</a>
+
+    <div class="report_card">
+        <div class="report_card__content">
+            <h2>Box Title</h2>
+            <div class="report_card__text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            </div>
+        </div>
+        <a href="#" class="report_card_btn">Hover Me</a>
+
+    </div>
+</body>
+</html>
